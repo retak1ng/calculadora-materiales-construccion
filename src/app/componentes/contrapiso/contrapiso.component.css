@@ -1,0 +1,24 @@
+.table-header {
+    display: contents;
+}
+
+.table-header th {
+    padding: 25px;
+}
+
+.table-middle th{
+    padding: 25px;
+}
+
+.table-middle td input{
+    border-radius: 10%;
+    width: 50px;
+    height: 25px;
+    appearance: none;
+}
+
+.table-middle td input::-webkit-inner-spin-button,
+.table-middle td input::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Eliminar botones en Chrome, Safari, Edge */
+    margin: 0;
+}
