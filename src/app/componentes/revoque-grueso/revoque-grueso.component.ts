@@ -11,11 +11,11 @@ export class RevoqueGruesoComponent {
   matUsandoCalYCemento = [
     { nombre: '1 Cal', cantidad: 3.60, unidad: 'kg', input: 0, medComercial: 25 },
     { nombre: '1/4 Cemento', cantidad: 1.85, unidad: 'kg', input: 0, medComercial: 50 },
-    { nombre: '3 Arena', cantidad: 0.017, unidad: 'm3', input: 0, medComercial: 1 },
+    { nombre: '3 Arena', cantidad: 0.017, unidad: 'm³', input: 0, medComercial: 1 },
   ]
 
   matUsandoCemento = [
     { nombre: '1 Cemento', cantidad: 3.80, unidad: 'kg', input: 0, medComercial: 50 },
-    { nombre: '5 Arena', cantidad: 0.020, unidad: 'm3', input: 0, medComercial: 1 },
+    { nombre: '5 Arena', cantidad: 0.020, unidad: 'm³', input: 0, medComercial: 1 },
   ]
 }

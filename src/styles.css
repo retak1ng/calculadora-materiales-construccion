@@ -1,6 +1,71 @@
 /* You can add global styles to this file, and also import other style files */
 body {
+    font-family: 'Oswald', sans-serif;
     background-color: #ffffff;
+}
+
+.app-container {
+    display: flex;
+}
+
+.content {
+    flex: 1;
+    padding: 16px;
+}
+
+.sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #f4f4f4;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    overflow-y: auto;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar li {
+    margin-bottom: 10px;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+.sidebar a:hover {
+    color: #007bff;
+}
+
+.support-bar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #f9f9f9;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    overflow-y: auto;
+    text-align: center;
+}
+
+.support-bar h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.support-bar p {
+    margin: 10px 0;
+    color: #555;
+    font-size: 14px;
 }
 
 h2 {
@@ -16,12 +81,13 @@ th {
 }
 
 table {
+    font-weight: 100;
     background-color: #d9dce4;
     border-radius: 25px;
-    box-shadow: 
-    0 0 0 1px var(--subtle-border-color), 
-    0 10px 15px -3px rgba(0, 0, 0, .05), 
-    0 4px 6px -4px rgba(0, 0, 0, .05);
+    box-shadow:
+        0 0 0 1px var(--subtle-border-color),
+        0 10px 15px -3px rgba(0, 0, 0, .05),
+        0 4px 6px -4px rgba(0, 0, 0, .05);
 }
 
 app-landing-page {
@@ -39,11 +105,15 @@ app-landing-page {
     padding: 25px;
 }
 
-.table-middle th{
+.table-middle th {
     padding: 25px;
 }
 
-.table-middle td input{
+.table-middle td {
+    text-align: center;
+}
+
+.table-middle td input {
     border-radius: 10%;
     width: 50px;
     height: 25px;
@@ -52,6 +122,7 @@ app-landing-page {
 
 .table-middle td input::-webkit-inner-spin-button,
 .table-middle td input::-webkit-outer-spin-button {
-    -webkit-appearance: none; /* Eliminar botones en Chrome, Safari, Edge */
+    -webkit-appearance: none;
+    /* Eliminar botones en Chrome, Safari, Edge */
     margin: 0;
 }

@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 export class AzotadoHidrofugoBajoRevoqueComponent {
   matConcretoConHidrofugo = [
     { nombre: '1 Cemento', cantidad: 2.7, unidad: 'kg', input: 0, medComercial: 50 },
-    { nombre: '3 Arena', cantidad: 0.006, unidad: 'm3', input: 0, medComercial: 1 },
-    { nombre: 'Hidrófugo(segun tipo)', cantidad: 0, unidad: 'm3', input: 0, medComercial: 1 },
+    { nombre: '3 Arena', cantidad: 0.006, unidad: 'm³', input: 0, medComercial: 1 },
+    { nombre: 'Hidrófugo(segun tipo)', cantidad: 0, unidad: 'm³', input: 0, medComercial: 1 },
   ]
 }

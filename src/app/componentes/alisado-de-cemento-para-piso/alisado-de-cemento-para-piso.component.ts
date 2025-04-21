@@ -10,6 +10,6 @@ import { FormsModule } from '@angular/forms';
 export class AlisadoDeCementoParaPisoComponent {
   matConcreto = [
     { nombre: '1 Cemento', cantidad: 10.80, unidad: 'kg', input: 0, medComercial: 50 },
-    { nombre: '3 Arena', cantidad: 0.024, unidad: 'm3', input: 0, medComercial: 1 },
+    { nombre: '3 Arena', cantidad: 0.024, unidad: 'm³', input: 0, medComercial: 1 },
   ]
 }

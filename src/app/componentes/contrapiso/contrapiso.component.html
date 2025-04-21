@@ -1,11 +1,11 @@
-<h2>Contrapiso</h2>
+<h2 id="contrapiso">Contrapiso</h2>
 <h3>Con Cal y Cemento</h3>
 
 <table style="--subtle-border-color: #b2b9c7;">
     <tr class="table-header">
         <th>Tipo de <br>material</th>
-        <th>Para 1m3</th>
-        <th>En m3</th>
+        <th>Para 1m³</th>
+        <th>En m³</th>
         <th>Total</th>
         <th>Total en <br>Medida Comercial</th>
     </tr>
@@ -18,7 +18,11 @@
                 <input type="number" [(ngModel)]="elem.input" />
             </td>
             <th>{{elem.cantidad * elem.input}}</th>
-            <th>{{(elem.cantidad * elem.input)/elem.medComercial}}</th>
+            @if (elem.unidad == 'kg'){
+                <th>{{(elem.cantidad * elem.input)/elem.medComercial}} Bolsas</th>
+            } @else {
+                <th>{{(elem.cantidad * elem.input)/elem.medComercial}} M³</th>
+            }
         </tr>
     }
 </table>
@@ -29,8 +33,8 @@
 <table style="--subtle-border-color: #b2b9c7;">
     <tr class="table-header">
         <th>Tipo de <br>material</th>
-        <th>Para 1m3</th>
-        <th>En m3</th>
+        <th>Para 1m³</th>
+        <th>En m³</th>
         <th>Total</th>
         <th>Total en <br>Medida Comercial</th>
     </tr>
@@ -43,7 +47,11 @@
                 <input type="number" [(ngModel)]="elem.input" />
             </td>
             <th>{{elem.cantidad * elem.input}}</th>
-            <th>{{(elem.cantidad * elem.input)/elem.medComercial}}</th>
+            @if (elem.unidad == 'kg'){
+                <th>{{(elem.cantidad * elem.input)/elem.medComercial}} Bolsas</th>
+            } @else {
+                <th>{{(elem.cantidad * elem.input)/elem.medComercial}} M³</th>
+            }
         </tr>
     }
 </table>
