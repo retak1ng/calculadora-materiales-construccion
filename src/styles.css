@@ -1,1 +1,57 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    background-color: #ffffff;
+}
+
+h2 {
+    color: #0e0e11;
+}
+
+h3 {
+    color: #71717a;
+}
+
+th {
+    color: #31323a;
+}
+
+table {
+    background-color: #d9dce4;
+    border-radius: 25px;
+    box-shadow: 
+    0 0 0 1px var(--subtle-border-color), 
+    0 10px 15px -3px rgba(0, 0, 0, .05), 
+    0 4px 6px -4px rgba(0, 0, 0, .05);
+}
+
+app-landing-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.table-header {
+    display: contents;
+}
+
+.table-header th {
+    padding: 25px;
+}
+
+.table-middle th{
+    padding: 25px;
+}
+
+.table-middle td input{
+    border-radius: 10%;
+    width: 50px;
+    height: 25px;
+    appearance: none;
+}
+
+.table-middle td input::-webkit-inner-spin-button,
+.table-middle td input::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Eliminar botones en Chrome, Safari, Edge */
+    margin: 0;
+}

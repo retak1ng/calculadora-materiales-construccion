@@ -1,0 +1,32 @@
+<h2>Colocación de Mosaicos y Baldosas</h2>
+
+<h3>Usando cal y cemento</h3>
+
+<table style="--subtle-border-color: #b2b9c7;">
+    <tr class="table-header">
+        <th>Tipo de <br>material</th>
+        <th>Para 1m2</th>
+        <th>En m2</th>
+        <th>Total</th>
+        <th>Total en <br>Medida Comercial</th>
+    </tr>
+    
+    @for (elem of matUsandoCalYCemento; track $index) {
+        <tr class="table-middle">
+            <th>{{elem.nombre}}</th>
+            @if(elem.cantidad == 0){
+                <th>----</th>
+                <th>----</th>
+                <th>----</th>
+                <th>----</th>
+            } @else {
+                <th>{{elem.cantidad}}</th>
+                <td>
+                    <input type="number" [(ngModel)]="elem.input" />
+                </td> 
+                <th>{{elem.cantidad * elem.input}}</th>
+                <th>{{(elem.cantidad * elem.input)/elem.medComercial}}</th>
+            }            
+        </tr>
+    }
+</table>
