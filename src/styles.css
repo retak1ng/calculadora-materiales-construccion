@@ -131,3 +131,44 @@ app-landing-page {
     /* Eliminar botones en Chrome, Safari, Edge */
     margin: 0;
 }
+
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+        /* Cambia a diseño en columna */
+    }
+
+    .sidebar,
+    .support-bar {
+        position: relative;
+        /* Quita la posición fija */
+        width: 100%;
+        /* Ocupan todo el ancho */
+        height: auto;
+        /* Ajustan su altura automáticamente */
+        margin-bottom: 16px;
+        /* Espaciado entre secciones */
+    }
+
+    .content {
+        padding: 8px;
+        /* Reduce el padding en pantallas pequeñas */
+    }
+
+    table {
+        font-size: 12px;
+        /* Reduce el tamaño de la fuente en tablas */
+    }
+
+    .table-header th,
+    .table-middle th {
+        padding: 10px;
+        /* Reduce el padding en tablas */
+    }
+
+    .table-middle td input {
+        width: 40px;
+        /* Ajusta el tamaño del input */
+        height: 20px;
+    }
+}
