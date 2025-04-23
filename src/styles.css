@@ -73,6 +73,10 @@ body {
     font-size: 14px;
 }
 
+.support-bar .social-links {
+    padding-bottom: 30px;
+}
+
 h2 {
     color: #0e0e11;
 }
