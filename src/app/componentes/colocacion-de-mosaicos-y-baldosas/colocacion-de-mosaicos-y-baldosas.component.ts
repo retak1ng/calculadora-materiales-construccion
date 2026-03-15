@@ -1,16 +1,18 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { CalcTablaComponent } from '../shared/calc-tabla/calc-tabla.component';
+import { Material } from '../../models/material.model';
 
 @Component({
   selector: 'app-colocacion-de-mosaicos-y-baldosas',
-  imports: [FormsModule],
+  standalone: true,
+  imports: [CalcTablaComponent],
   templateUrl: './colocacion-de-mosaicos-y-baldosas.component.html',
   styleUrl: './colocacion-de-mosaicos-y-baldosas.component.css'
 })
 export class ColocacionDeMosaicosYBaldosasComponent {
-  matUsandoCalYCemento = [
-    { nombre: '1 Cal Aérea', cantidad: 5.90, unidad: 'kg', input: 0, medComercial: 25 },
-    { nombre: '1/4 Cemento', cantidad: 3.10, unidad: 'kg', input: 0, medComercial: 50 },
-    { nombre: '3 Arena', cantidad: 0.030, unidad: 'm³', input: 0, medComercial: 1 },
-  ]
+  matUsandoCalYCemento: Material[] = [
+    { nombre: 'Cal Aérea', cantidad: 5.90, unidad: 'kg', medComercial: 25 },
+    { nombre: 'Cemento', cantidad: 3.10, unidad: 'kg', medComercial: 50 },
+    { nombre: 'Arena', cantidad: 0.030, unidad: 'm³', medComercial: 1 },
+  ];
 }

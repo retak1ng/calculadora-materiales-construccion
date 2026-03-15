@@ -1,57 +1,21 @@
-<h2 id="contrapiso">Contrapiso</h2>
-<h3>Con Cal y Cemento</h3>
+<section id="contrapiso" class="calculadora-section">
+  <div class="section-head">
+    <span class="section-emoji">🏠</span>
+    <div>
+      <h2 class="section-title">Contrapiso</h2>
+      <p class="section-desc">Base estructural de la losa — calcular por m³ de mezcla</p>
+    </div>
+  </div>
 
-<table style="--subtle-border-color: #b2b9c7;">
-    <tr class="table-header">
-        <th>Tipo de <br>material</th>
-        <th>Para 1m³</th>
-        <th>En m³</th>
-        <th>Total</th>
-        <th>Total en <br>Medida Comercial</th>
-    </tr>
-    
-    @for (elem of matUsandoCalYCemento; track $index) {
-        <tr class="table-middle">
-            <th>{{elem.nombre}}</th>
-            <th>{{elem.cantidad}}{{elem.unidad}}</th>
-            <td>
-                <input type="number" [(ngModel)]="elem.input" />
-            </td>
-            <th>{{elem.cantidad * elem.input}} m³</th>
-            @if (elem.unidad == 'kg'){
-                <th>{{(elem.cantidad * elem.input)/elem.medComercial}} Bolsas</th>
-            } @else {
-                <th>{{(elem.cantidad * elem.input)/elem.medComercial}} M³</th>
-            }
-        </tr>
-    }
-</table>
+  <app-calc-tabla
+    subtitulo="Con Cal y Cemento"
+    unidadBase="m³"
+    [materiales]="matCalYCemento">
+  </app-calc-tabla>
 
-
-<h3>Con Cemento</h3>
-
-<table style="--subtle-border-color: #b2b9c7;">
-    <tr class="table-header">
-        <th>Tipo de <br>material</th>
-        <th>Para 1m³</th>
-        <th>En m³</th>
-        <th>Total</th>
-        <th>Total en <br>Medida Comercial</th>
-    </tr>
-    
-    @for (elem of matUsandoCemento; track $index) {
-        <tr class="table-middle">
-            <th>{{elem.nombre}}</th>
-            <th>{{elem.cantidad}}{{elem.unidad}}</th>
-            <td>
-                <input type="number" [(ngModel)]="elem.input" />
-            </td>
-            <th>{{elem.cantidad * elem.input}} m³</th>
-            @if (elem.unidad == 'kg'){
-                <th>{{(elem.cantidad * elem.input)/elem.medComercial}} Bolsas</th>
-            } @else {
-                <th>{{(elem.cantidad * elem.input)/elem.medComercial}} M³</th>
-            }
-        </tr>
-    }
-</table>
+  <app-calc-tabla
+    subtitulo="Solo Cemento"
+    unidadBase="m³"
+    [materiales]="matCemento">
+  </app-calc-tabla>
+</section>

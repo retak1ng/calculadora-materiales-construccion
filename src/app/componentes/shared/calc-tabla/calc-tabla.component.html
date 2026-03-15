@@ -1,0 +1,98 @@
+<div class="calc-card">
+  @if (subtitulo) {
+    <div class="formula-header">
+      <span class="formula-tag">Fórmula</span>
+      <h3 class="formula-title">{{ subtitulo }}</h3>
+    </div>
+  }
+
+  <div class="input-section">
+    <label class="input-label">Superficie a cubrir</label>
+    <div class="input-controls">
+      <div class="input-field" [class.input-active]="metros > 0">
+        <input
+          type="number"
+          min="0"
+          [(ngModel)]="metros"
+          placeholder="0"
+          class="metros-input"
+        />
+        <span class="input-suffix">{{ unidadBase }}</span>
+      </div>
+      @if (metros > 0) {
+        <button class="btn-limpiar" (click)="limpiar()">✕ Limpiar</button>
+      }
+    </div>
+  </div>
+
+  <div class="tabla-wrapper">
+    <table class="materiales-table">
+      <thead>
+        <tr>
+          <th class="col-material">Material</th>
+          <th class="col-base">Por {{ unidadBase }}</th>
+          <th class="col-total">Total</th>
+          <th class="col-comercial">Medida Comercial</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (mat of materiales; track $index) {
+          <tr class="mat-row" [class.row-active]="hasResult && mat.cantidad > 0">
+            <td class="cell-nombre">
+              <div class="nombre-inner">
+                <span class="mat-dot"></span>
+                {{ mat.nombre }}
+              </div>
+            </td>
+            @if (mat.cantidad === 0) {
+              <td class="cell-na" colspan="3">Según especificación del fabricante</td>
+            } @else {
+              <td class="cell-base">
+                {{ mat.cantidad }}<span class="unit"> {{ mat.unidad }}</span>
+              </td>
+              <td class="cell-total">
+                @if (hasResult) {
+                  <strong>{{ mat.cantidad * metros | resultado }}</strong><span class="unit"> {{ mat.unidad }}</span>
+                } @else {
+                  <span class="placeholder">—</span>
+                }
+              </td>
+              <td class="cell-comercial">
+                @if (hasResult) {
+                  <span class="badge-result">
+                    {{ (mat.cantidad * metros) / mat.medComercial | resultado }}
+                    {{ mat.unidad === 'kg' ? 'bolsas' : 'm³' }}
+                  </span>
+                } @else {
+                  <span class="placeholder">—</span>
+                }
+              </td>
+            }
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+
+  @if (hasResult) {
+    <div class="resultado-panel">
+      <p class="resultado-title">
+        Necesitás para <strong>{{ metros }} {{ unidadBase }}</strong>:
+      </p>
+      <div class="resultado-cards">
+        @for (mat of materiales; track $index) {
+          @if (mat.cantidad > 0) {
+            <div class="resultado-card">
+              <span class="rc-valor">
+                {{ (mat.cantidad * metros) / mat.medComercial | resultado }}
+              </span>
+              <span class="rc-etiqueta">
+                {{ mat.unidad === 'kg' ? 'bolsas' : 'm³' }}<br>{{ mat.nombre }}
+              </span>
+            </div>
+          }
+        }
+      </div>
+    </div>
+  }
+</div>

@@ -1,28 +1,55 @@
-<div class="app-container">
-    <div class="content">
-        <router-outlet></router-outlet>
+<div class="app-layout">
+  <header class="app-header">
+    <a class="header-brand" href="#">
+      <span class="brand-icon">🏗️</span>
+      <span class="brand-name">Planifica Tu Obra</span>
+    </a>
+    <div class="header-links">
+      <a href="https://www.github.com/retak1ng/" target="_blank" class="header-link">GitHub</a>
+      <a href="https://www.linkedin.com/in/retak1ng/" target="_blank" class="header-link header-link-primary">LinkedIn</a>
     </div>
-    <div class="sidebar">
-        <ul>
-            <li><a href="#contrapiso">Contrapiso</a></li>
-            <li><a href="#carpeta-hidrofuga">Carpeta Hidrófuga</a></li>
-            <li><a href="#alisado-cemento">Alisado de Cemento</a></li>
-            <li><a href="#colocacion-mosaicos">Colocación de Mosaicos</a></li>
-            <li><a href="#azotado-hidrofugo">Azotado Hidrófugo</a></li>
-            <li><a href="#revoque-grueso">Revoque Grueso</a></li>
-            <li><a href="#revoque-fino">Revoque Fino</a></li>
-        </ul>
-    </div>
-    <div class="support-bar">
-        <div>
-            <h3>Apoyar</h3>
-            <p>Por favor, apóyame si te gusta esta página. Eres bienvenido a enviarme una donación.</p>
-            <p><strong>Alias:</strong> retak1ng</p>
+  </header>
+
+  <div class="app-body">
+    <aside class="app-sidebar">
+      <p class="sidebar-section-label">Calculadoras</p>
+      <nav class="sidebar-nav">
+        <a href="#contrapiso" class="sidebar-nav-item">
+          <span class="nav-icon">🏠</span>Contrapiso
+        </a>
+        <a href="#carpeta-hidrofuga" class="sidebar-nav-item">
+          <span class="nav-icon">💧</span>Carpeta Hidrófuga
+        </a>
+        <a href="#alisado-cemento" class="sidebar-nav-item">
+          <span class="nav-icon">✨</span>Alisado de Cemento
+        </a>
+        <a href="#colocacion-mosaicos" class="sidebar-nav-item">
+          <span class="nav-icon">🔲</span>Mosaicos y Baldosas
+        </a>
+        <a href="#azotado-hidrofugo" class="sidebar-nav-item">
+          <span class="nav-icon">🛡️</span>Azotado Hidrófugo
+        </a>
+        <a href="#revoque-grueso" class="sidebar-nav-item">
+          <span class="nav-icon">🧱</span>Revoque Grueso
+        </a>
+        <a href="#revoque-fino" class="sidebar-nav-item">
+          <span class="nav-icon">🎨</span>Revoque Fino
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <p class="sidebar-footer-label">Creado por</p>
+        <p class="sidebar-author">&#64;retak1ng</p>
+        <div class="sidebar-socials">
+          <a href="https://www.github.com/retak1ng/" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/retak1ng/" target="_blank">LinkedIn</a>
+          <a href="https://www.instagram.com/martiin_rk/" target="_blank">Instagram</a>
         </div>
-        <div class="social-links">
-            <p><a href="https://www.github.com/retak1ng/" target="_blank">GitHub</a></p>
-            <p><a href="https://www.linkedin.com/in/retak1ng/" target="_blank">Linkedin</a></p>
-            <p><a href="https://www.instagram.com/martiin_rk/" target="_blank">Instagram</a></p>
-        </div>
-    </div>
+      </div>
+    </aside>
+
+    <main class="app-main">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
 </div>
